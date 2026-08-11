@@ -1,112 +1,74 @@
-:const caixaPrincipal = document.querySelector(".caixa-principal");
-const caixaPerguntas = document.querySelector(".caixa-perguntas");
-const caixaAlternativas = document.querySelector(".caixa-alternativas");
-const caixaResultado = document.querySelector(".caixa-resultado");
-const textoResultado = document.querySelector(".texto-resultado");
-
-const perguntas = [
-    {
-        enunciado: "O último ano do Ensino Médio chegou! Na hora de fazer trabalhos escolares ou projetos, qual área desperta mais seu interesse?",
-        alternativas: [
-            {
-                texto: "Analisar números, resolver problemas lógicos ou mexer com tecnologia.",
-                afirmacao: "Você demonstra um forte raciocínio analítico e afinidade com Exatas e Tecnologia."
-            },
-            {
-                texto: "Entender comportamento humano, história, artes ou criar textos.",
-                afirmacao: "Sua sensibilidade crítica e comunicação apontam para o campo das Humanidades e Artes."
-            }
-        ]
-    },
-    {
-        enunciado: "Em uma atividade prática de feira de ciências ou feira cultural da escola, qual papel você prefere assumir?",
-        alternativas: [
-            {
-                texto: "Organizar os dados, cuidar da estrutura física ou programar/montar os equipamentos.",
-                afirmacao: "Gosta de estruturar processos e ver soluções práticas sendo aplicadas."
-            },
-            {
-                texto: "Apresentar o projeto para o público, conversar com os visitantes e mediar debates.",
-                afirmacao: "Sua facilidade em se expressar e lidar com pessoas é um diferencial marcante."
-            }
-        ]
-    },
-    {
-        enunciado: "Pensando no seu futuro ambiente de trabalho no pós-3º ano, o que mais te atrai?",
-        alternativas: [
-            {
-                texto: "Ambientes dinâmicos de inovação, laboratórios ou escritórios de planejamento.",
-                afirmacao: "Busca carreiras voltadas para pesquisa, desenvolvimento técnico ou gestão estratégica."
-            },
-            {
-                texto: "Hospitais, clínicas, ONGs, salas de aula ou contato direto com a comunidade.",
-                afirmacao: "Possui vocação para ajudar o próximo, promovendo bem-estar, saúde ou educação."
-            }
-        ]
-    },
-    {
-        enunciado: "Diante de um problema complexo durante o ano letivo, qual costuma ser a sua reação rápida?",
-        alternativas: [
-            {
-                texto: "Procurar padrões, usar lógica e buscar ferramentas digitais ou estatísticas.",
-                afirmacao: "Sabe manter a objetividade e usar recursos técnicos para superar obstáculos."
-            },
-            {
-                texto: "Reunir o grupo, ouvir diferentes opiniões e encontrar uma solução empática.",
-                afirmacao: "Tem um perfil colaborativo, focado na mediação de conflitos e trabalho em equipe."
-            }
-        ]
-    },
-    {
-        enunciado: "O Vestibular/ENEM está chegando. Qual tipo de impacto você gostaria de gerar com a sua futura profissão?",
-        alternativas: [
-            {
-                texto: "Criar novas tecnologias, otimizar sistemas ou construir infraestruturas para o mundo.",
-                afirmacao: "Seu foco está em transformar a sociedade através da inovação e eficiência técnica."
-            },
-            {
-                texto: "Impactar vidas diretamente, defender direitos ou cuidar da saúde física e mental das pessoas.",
-                afirmacao: "Seu propósito se alinha com o cuidado, justiça e desenvolvimento humano social."
-            }
-        ]
-    }
-];
-
-let atual = 0;
-let perguntaAtual;
-let historiaFinal = "";
-
-function mostraPergunta() {
-    if (atual >= perguntas.length) {
-        mostraResultado();
-        return;
-    }
-    perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.textContent = "";
-    mostraAlternativas();
+:root {
+    --cor-fundo: #0b2545;        /* Azul escuro */
+    --cor-principal: #134074;    /* Azul médio */
+    --cor-secundaria: #8da9c4;   /* Azul claro */
+    --cor-destaque: #ffc857;     /* Amarelo */
+    --cor-texto: #eeefc8;        /* Amarelo bem claro / creme para contraste */
+    --cor-hover: #e0a938;        /* Amarelo escuro para hover */
 }
 
-function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas) {
-        const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
-        caixaAlternativas.appendChild(botaoAlternativas);
-    }
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
-    atual++;
-    mostraPergunta();
+.caixa-principal {
+    background-color: var(--cor-principal);
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--cor-destaque);
 }
 
-function mostraResultado() {
-    caixaPerguntas.textContent = "Resultado do seu Perfil Vocacional:";
-    textoResultado.textContent = historiaFinal;
-    caixaAlternativas.textContent = "";
+h1 {
+    color: var(--cor-destaque);
+    margin-bottom: 25px;
+    font-size: 1.8rem;
 }
 
-mostraPergunta();
+.caixa-perguntas {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.caixa-alternativas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+button {
+    background-color: var(--cor-secundaria);
+    color: #0b2545;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--cor-destaque);
+    color: #000000;
+    transform: translateY(-2px);
+}
+
+.caixa-resultado {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
