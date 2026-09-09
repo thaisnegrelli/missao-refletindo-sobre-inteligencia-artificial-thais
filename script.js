@@ -7,116 +7,137 @@ const textoResultado = document.querySelector(".texto-resultado");
 const perguntas = [
   {
     enunciado:
-      "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+      "Você assume a chefia da Usina Nuclear de Chernobyl em um dia de testes de segurança. O reator de Urânio-235 entra em superaquecimento devido a uma falha no sistema de refrigeração por água. Qual o seu primeiro procedimento técnico?",
     alternativas: [
       {
-        texto: "Isso é assustador!",
-        afirmacao: [
-          "No início ficou com medo do que essa tecnologia pode fazer. ",
-          "Achou assustador pensar na velocidade na qual a tecnologia está avançando.",
-        ],
+        texto:
+          "Inserir barras de controle de Grafite para tentar desacelerar a reação de fissão nuclear imediatamente.",
+        afirmacao:
+          "Sua decisão de inserir barras de grafite causou um pico temporário de reatividade antes de desacelerar, revelando a importância do controle estequiométrico e cinético das reações nucleares.",
       },
       {
-        texto: "Isso é maravilhoso!",
-        afirmacao: [
-          "Quis saber como usar IA no seu dia a dia.",
-          "Foi atrás de vídeos, artigos e mais informaçõe sobre como utilizar essa tecnologia.",
-        ],
+        texto:
+          "Injetar imediatamente grande quantidade de água boricada para absorver os nêutrons em excesso.",
+        afirmacao:
+          "Ao utilizar o Boro como moderador de nêutrons, você conseguiu conter o pico inicial da reação em cadeia com embasamento em física e química nuclear.",
+      },
+    ],
+  },
+  {
+    enunciado:
+      "Uma das seções do reator sofre uma fissura, liberando gases contendo isótopos radioativos como Iodo-131 e Césio-137. Como você protege a equipe e a população vizinha da contaminação primária por Iodo radioativo?",
+    alternativas: [
+      {
+        texto:
+          "Distribuir pastilhas de Iodeto de Potássio (KI) não radioativo para saturação prévia da glândula tireoide.",
+        afirmacao:
+          "Ao prescrever Iodeto de Potássio, você evitou que a tireoide absorvesse o isótopo radioativo Iodo-131 por acúmulo biológico.",
+      },
+      {
+        texto:
+          "Instalar purificadores com filtros de carvão ativado sem aplicação de tratamento químico profilático.",
+        afirmacao:
+          "Embora os filtros tenham retido parte dos gases, a falta de proteção biológica direta expôs a população à absorção de Iodo radioativo no organismo.",
+      },
+    ],
+  },
+  {
+    enunciado:
+      "Com o reator contido, é necessário construir uma estrutura de contenção (Sarcófago) sobre os escombros para conter a radiação gama de alta energia. Qual material de blindagem você escolhe no projeto?",
+    alternativas: [
+      {
+        texto:
+          "Camadas densas de Chumbo combinadas com estruturas pesadas de Concreto armado.",
+        afirmacao:
+          "A escolha de Chumbo e Concreto provou ser eficaz, pois materiais de alta densidade atenuam adequadamente as ondas de radiação gama.",
+      },
+      {
+        texto:
+          "Ligas de Alumínio e Aço Inoxidável leve para agilizar a construção da estrutura.",
+        afirmacao:
+          "O uso de materiais com baixa densidade eletrônica permitiu o vazamento contínuo de radiação gama, exigindo reforços estruturais posteriores.",
+      },
+    ],
+  },
+  {
+    enunciado:
+      "A água usada no resfriamento emergencial do reator acumulou alto teor de isótopos solúveis de Césio-137 e Estrôncio-90. Como tratar essa água antes de qualquer descarte ou armazenamento?",
+    alternativas: [
+      {
+        texto:
+          "Utilizar resinas de troca iônica e zeólitas para filtrar e fixar os íons radioativos.",
+        afirmacao:
+          "O processo de troca iônica reteve com sucesso os íons Césio e Estrôncio, permitindo o isolamento do rejeito líquido de forma química segura.",
+      },
+      {
+        texto:
+          "Realizar um processo simples de fervura e destilação para evaporar a água e liberar o vapor na atmosfera.",
+        afirmacao:
+          "A evaporação espalhou isótopos radioativos pela atmosfera através do vapor contaminado, gerando chuva ácida e radioativa na região.",
+      },
+    ],
+  },
+  {
+    enunciado:
+      "Para a destinação final do lixo atômico sólido de alta atividade e longo tempo de meia-vida (como o Plutônio-239), qual estratégia de armazenamento longo prazo é adotada?",
+    alternativas: [
+      {
+        texto:
+          "Encapsulamento em matrizes vítreas (vitrificação) e sepultamento em repositórios geológicos profundos.",
+        afirmacao:
+          "A vitrificação em repositórios geológicos isolou os actinídeos de longa meia-vida da biosfera por milênios.",
+      },
+      {
+        texto:
+          "Armazenamento em tambores metálicos simples dispostos em galpões de superfície monitorados.",
+        afirmacao:
+          "Os tambores sofreram corrosão química ao longo das décadas, exigindo gastos contínuos de contenção por parte do Estado.",
       },
     ],
   },
 ];
-
-    {
-        enunciado: "Com a descoberta desta tecnologia, chamada Inteligência Artificial, uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre esta tecnologia. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de IA em sala de aula. Qual atitude você toma?",
-        alternativas: [
-            {
-                texto: "Utiliza uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
-                afirmacao: "Conseguiu utilizar a IA para buscar informações úteis."
-            },
-            {
-                texto: "Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao: "Sentiu mais facilidade em utilizar seus próprios recursos para escrever seu trabalho."
-            }
-        ]
-    },
-    {
-        enunciado: "Após a elaboração do trabalho escrito, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
-        alternativas: [
-            {
-                texto: "Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao: "Vem impulsionando a inovação na área de IA e luta para abrir novos caminhos profissionais com IA."
-            },
-            {
-                texto: "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao: "Sua preocupação com as pessoas motivou a criar um grupo de estudos entre trabalhadores para discutir meios de utilização de IA de forma ética."
-            }
-        ]
-    },
-    {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
-        alternativas: [
-            {
-                texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao: "Notou também que muitas pessoas não sabem ainda utilizar as ferramentas tradicionais e decidiu compartilhar seus conhecimentos de design utilizando ferramentas de pintura digital para iniciantes."
-            },
-            {
-                texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao: "Acelerou o processo de criação de trabalhos utilizando geradores de imagem e agora consegue ensinar pessoas que sentem dificuldades em desenhar manualmente como utilizar também!"
-            }
-        ]
-    },
-    {
-        enunciado: "Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda da IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz? ",
-        alternativas: [
-            {
-                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao: "Infelizmente passou a utilizar a IA para fazer todas suas tarefas e agora se sente dependente da IA para tudo."
-            },
-            {
-                texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao: "Percebeu que toda IA reproduz orientações baseadas na empresa que programou e muito do que o chat escrevia não refletia o que pensava e por isso sabe que os textos gerados pela IA devem servir como auxílio e não resultado final. "
-            }
-        ]
-    },
-];
-
 
 let atual = 0;
 let perguntaAtual;
 let historiaFinal = "";
 
 function mostraPergunta() {
-    if (atual >= perguntas.length) {
-        mostraResultado();
-        return;
-    }
-    perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.textContent = "";
-    mostraAlternativas();
+  if (atual >= perguntas.length) {
+    mostraResultado();
+    return;
+  }
+  perguntaAtual = perguntas[atual];
+  caixaPerguntas.textContent = perguntaAtual.enunciado;
+  caixaAlternativas.textContent = "";
+  mostraAlternativas();
 }
 
-function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas) {
-        const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
-        caixaAlternativas.appendChild(botaoAlternativas);
-    }
+function mostraAlternativas() {
+  for (const alternativa of perguntaAtual.alternativas) {
+    const botaoAlternativas = document.createElement("button");
+    botaoAlternativas.textContent = alternativa.texto;
+    botaoAlternativas.addEventListener("click", () =>
+      respostaSelecionada(alternativa)
+    );
+    caixaAlternativas.appendChild(botaoAlternativas);
+  }
 }
 
 function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = opcaoSelecionada.afirmacao;
+  const afirmacoes = opcaoSelecionada.afirmacao;
+  if (Array.isArray(afirmacoes)) {
+    historiaFinal += afirmacoes.join(" ") + " ";
+  } else {
     historiaFinal += afirmacoes + " ";
-    atual++;
-    mostraPergunta();
+  }
+  atual++;
+  mostraPergunta();
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Em 2049...";
-    textoResultado.textContent = historiaFinal;
-    caixaAlternativas.textContent = "";
+  caixaPerguntas.textContent = "RELATÓRIO DE DEBRIEFING NUCLEAR (Anos depois...):";
+  textoResultado.textContent = historiaFinal;
+  caixaAlternativas.textContent = "";
 }
 
 mostraPergunta();

@@ -1,43 +1,77 @@
-:root{
-    --cor-fundo: #01080E ;
-    --cor-principal: #0B0D20 ;
-    --cor-secundaria: #212333; 
-    --cor-destaque: #2BDEFD;
-    --cor-texto: #D7F9FF;
-
+:root {
+    --cor-fundo: #080d08;
+    --cor-principal: #121c12;
+    --cor-secundaria: #1b2e1b;
+    --cor-destaque: #39ff14; /* Verde Radioativo Neon */
+    --cor-texto: #e2ffe0;
+    --cor-borda: #2d502d;
 }
 
 body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
+    font-family: 'Courier New', Courier, monospace; /* Estilo terminal/painel */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-}
-
-.caixa-principal{
-    background-color: var(--cor-principal);
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
+    margin: 0;
     padding: 20px;
+    box-sizing: border-box;
 }
 
-h1{
+.caixa-principal {
+    background-color: var(--cor-principal);
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    padding: 30px;
+    border-radius: 8px;
+    border: 2px solid var(--cor-destaque);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+}
+
+h1 {
     color: var(--cor-destaque);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px var(--cor-destaque);
+}
+
+.caixa-perguntas {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.caixa-alternativas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 button {
     background-color: var(--cor-secundaria);
     color: var(--cor-texto);
-    border: none;
-    border-radius: 15px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
     padding: 15px;
-    transition: background-color 0.3s;
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
 }
 
-button:hover{
+button:hover {
     background-color: var(--cor-destaque);
-    color: var(--cor-principal);
+    color: var(--cor-fundo);
+    font-weight: bold;
+    box-shadow: 0 0 10px var(--cor-destaque);
+}
+
+.texto-resultado {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-align: justify;
 }
